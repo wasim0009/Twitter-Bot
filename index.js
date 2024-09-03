@@ -52,7 +52,7 @@ async function postTweet(message) {
 }
 
 // Schedule the tweet to be posted every day at 9 AM
-cron.schedule("* * * * *", async () => {
+cron.schedule("0 9 * * *", async () => {
   const quote = await fetchQuote();
   if (quote) {
     await postTweet(quote);
